@@ -1,5 +1,6 @@
 # dependencies
 /node_modules
+/website/node_modules
 /.pnp
 .pnp.*
 .yarn/*
@@ -15,6 +16,9 @@
 /.next/
 /.vinext/
 /out/
+/website/.next/
+/website/.vinext/
+/website/out/
 
 # misc
 .DS_Store
@@ -34,5 +38,7 @@ yarn-error.log*
 next-env.d.ts
 /dist/
 /.wrangler/
+/website/dist/
+/website/.wrangler/
 /outputs/
 /work/

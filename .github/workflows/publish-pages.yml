@@ -24,20 +24,23 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: website/package-lock.json
 
       - name: Install dependencies
         run: npm ci
+        working-directory: website
 
       - name: Build static portfolio
         run: npm run build
+        working-directory: website
 
       - name: Prepare project-site asset paths
-        run: mv dist/client/portfolio/_next dist/client/_next
+        run: mv website/dist/client/portfolio/_next website/dist/client/_next
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: website/dist/client
 
   deploy:
     environment:
